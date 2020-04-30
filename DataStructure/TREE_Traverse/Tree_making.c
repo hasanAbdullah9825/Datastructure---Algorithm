@@ -65,7 +65,7 @@ add_right_child(nine,eight);
 Node *three=create_node(3);
 Node *four=create_node(4);
 add_left_child(eight,three);
-add_left_child(eight,four);
+add_right_child(eight,four);
 
 
 return two;
