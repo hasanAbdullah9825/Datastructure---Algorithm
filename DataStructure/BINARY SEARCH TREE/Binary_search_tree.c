@@ -91,6 +91,7 @@ Node * bst_insert(Node *root,Node *node)
         add_right_child(parent_node,node);
     }
 
+    return root;
 }
 
 
@@ -105,6 +106,7 @@ Node *create_bst()
     for(int i=0; i<8; i++)
     {
         node=create_node(ara[i]);
+
         root=bst_insert(root,node);
 
     }
@@ -114,9 +116,32 @@ Node *create_bst()
 }
 
 
+void pre_order(Node *node)
+{
+    printf("%d ",node->data);
+
+    if(node->left!=NULL)
+    {
+        pre_order(node->left);
+    }
+
+    if(node->right!=NULL)
+    {
+        pre_order(node->right);
+    }
+
+}
 
 
-int main(){
+int main()
+{
+    Node *root=create_bst();
+    pre_order(root);
+    printf("\n");
+    return 0;
+
+
+
 }
 
 
